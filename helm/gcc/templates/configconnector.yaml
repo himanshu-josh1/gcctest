@@ -1,0 +1,13 @@
+# configconnector.yaml
+apiVersion: core.cnrm.cloud.google.com/v1beta1
+kind: ConfigConnector
+metadata:
+  # the name is restricted to ensure that there is only one
+  # ConfigConnector resource installed in your cluster
+  name: configconnector.core.cnrm.cloud.google.com
+  annotations:
+          "helm.sh/hook": post-install
+          "helm.sh/hook-weight": "10"
+spec:
+ mode: cluster
+ googleServiceAccount: "terraform-cd@us-gcp-ame-con-ttscc-npd-1.iam.gserviceaccount.com"
